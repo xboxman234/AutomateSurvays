@@ -10,3 +10,4 @@ for the ai we using Google Generative AI	Free access to models like Gemini 2.5 F
 we using chromium for the browser, headed to start then headless
 
 hey I just met you, and this is crazy, but here's my number, so call me maybe :)
+https://gemini.google.com/share/d0f970ea6766
