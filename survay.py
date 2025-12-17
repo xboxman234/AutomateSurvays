@@ -14,18 +14,16 @@ def run_sync_automation():
 
         # 4. Navigate to the target URL
         
-        page.goto("https://www.chess.com/home")
+        page.goto("https://app.surveyjunkie.com")
 
         # 5. Get and print the page title
         page_title = page.title()
         print(f"Page Title: **{page_title}**")
 
         # 6. Perform a simple action (e.g., take a screenshot)
-        page.locator("#login-username").fill("balls")
+        page.get_by_text("Log in with Google").click()
+        page.get_by_test_id("identifierId").fill("test")
         input()
-        # 7. Close the browser
-        browser.close()
-        print("\nAutomation complete. Browser closed.")
 
 if __name__ == "__main__":
     run_sync_automation()
