@@ -1,5 +1,5 @@
 from playwright.sync_api import sync_playwright
-
+import re
 
 def run_sync_automation():
     # 1. Start Playwright in the synchronous context manager
@@ -27,8 +27,14 @@ def run_sync_automation():
         #input()
         page.locator("form.sign-up-popup").locator('input[name="email"]').fill("jimmyjimmyjonjon1@gmail.com")
         page.locator("form.sign-up-popup").locator(".join-now").click()
-        
-        
+        page.get_by_role("button",name="Start survey").first.wait_for()
+        buttons = page.get_by_role("button",name="Start survey").all()
+        #iterate later
+        buttons[2].click()
+        ok=re.compile("Ok, let.s go",re.IGNORECASE)
+        page.get_by_role("button",name=ok).wait_for()
+        page.get_by_role("button",name=ok).click()
+
 
 
         
