@@ -1,5 +1,7 @@
+from multiprocessing import context
 from playwright.sync_api import sync_playwright
-
+with context.expect_page() as new_page_info:
+    page.get_by_role("button", name="Sign in with Google").click()
 def run_sync_automation():
     # 1. Start Playwright in the synchronous context manager
     # This handles the setup and teardown automatically.
