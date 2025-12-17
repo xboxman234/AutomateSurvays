@@ -1,0 +1,10 @@
+we using https://app.surveyjunkie.com automate take survays
+options for hosting later: 
+Oracle Cloud (OCI)	Always Free VM (AMD & ARM) 24 gb ram, GO TO
+AWS	Lambda (Serverless) 1 million req per month, 15 minute time limit,hard to fit everything in
+Render	Free Web Service / Cron Job 750 hour/month, hard to fit everything in
+we using playwright or selenium
+we using sqlite to log personality and answer log
+for the ai we using Google Generative AI	Free access to models like Gemini 2.5 Flash with generous limits 
+(e.g., 1,500 requests/day, 1M tokens/minute)
+we using chromium for the browser, headed to start then headless

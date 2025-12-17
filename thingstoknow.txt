@@ -1,0 +1,17 @@
+pets, bird cat dog fish horse hamster mouse rabbit ferret turtle snake lizard spider goat pig chicken cattle
+#things to remember:
+#postal code 55125, date of birth 02/25/2000, need to generate an id with that later,male, first name Jimmy last name Jon
+you do all of your household's grocery shopping
+your living situation is that you own your own home
+your marital status is that you are married
+your race is white/caucasian
+you do not speak spanish
+you are not of hispanic latino or spanish origin
+you have 2 children, one female who is 18 and one male who is 18
+the highest level of education you have recieved is a master's degree
+you make 75,000 to 80,000$ a year
+you area registered voter and a democrat
+you are employed full time
+you work in advertising, and you are the level of analyst
+101-500 people work at your organization
+your religious affiliation is christian
