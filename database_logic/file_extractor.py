@@ -2,8 +2,8 @@ import sqlite3
 import json
 import os
 
-db_filename = "ai_memory.db"
-json_filename = "ai_data.json"
+db_filename = "database_logic/ai_memory.db"
+json_filename = "database_logic/ai_data.json"
 
 # Connect to SQLite database
 conn = sqlite3.connect(db_filename)

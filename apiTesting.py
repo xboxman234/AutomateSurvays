@@ -21,7 +21,7 @@ with open(file_path, 'r') as f:
     data = json.load(f)
 
 # Your test prompt
-prompt = f"Using the data provided, Embody this type of person and act completely like him, answering questions like he would. What phone provider do you use? ONLY answer just an answer, don't make it like a conversation or a sentence, only a pure answer: {json.dumps(data)}"
+prompt = f"Using the data provided, Embody this type of person and act completely like him, answering questions like he would. What phone provider do you use? ONLY answer just an answer, don't make it like a conversation or a sentence, only a pure answer, no periods: {json.dumps(data)}"
 
 # Make the request
 response = client.models.generate_content(
