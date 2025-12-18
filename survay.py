@@ -1,4 +1,5 @@
 from playwright.sync_api import sync_playwright
+import time
 import re
 
 def run_sync_automation():
@@ -34,14 +35,22 @@ def run_sync_automation():
         page.get_by_text("Continue").click()
         page.locator('label[data-test-id="ps-offers-platforms-popup-desktop-label-desktop"]').click()
         page.get_by_text("Save Selection").click()
-        page.locator(".list-item").first.wait_for()
-        for i in page.locator(".five-survey-tile").all():
-            print(i.inner_text())
+
+        page.locator(".featured-surveys").locator(".five-survey-tile").first.wait_for()
+        page.locator(".featured-surveys").locator(".five-survey-tile").first.click()
+        #input()
+        time.sleep(3)
+        page.locator('[data-test-id="ps-slide-unlock-handler-btn"]').wait_for(state="attached")
+        box=page.locator("#slideunlock").bounding_box()
+        page.locator('[data-test-id="ps-slide-unlock-handler-btn"]').drag_to(page.locator("#slideunlock"),target_position={
+            "x":box['width'] - 5,
+            "y": box['height']/2
+        })
         
 
+        #WORK ON QUALIFICATION
 
-
-        
+        print("ready to end")
         input()
 
 if __name__ == "__main__":
