@@ -15,25 +15,29 @@ def run_sync_automation():
 
         # 4. Navigate to the target URL
         
-        page.goto("https://www.surveyjunkie.com/?sign-up")
+        page.goto("https://app.fivesurveys.com/surveys")
 
         # 5. Get and print the page title
         page_title = page.title()
         print(f"Page Title: **{page_title}**")
+        # Use the attribute selector directly
+        # Use the attribute selector directly
+        email_selector = 'input[data-test-id="app-page-email-field-input"]'
 
-        # 6. Perform a simple action (e.g., take a screenshot)
-        #page.get_by_role("textbox",name="email").click().fill("hi")
-        #page.press("Enter")
-        #input()
-        page.locator("form.sign-up-popup").locator('input[name="email"]').fill("jimmyjimmyjonjon1@gmail.com")
-        page.locator("form.sign-up-popup").locator(".join-now").click()
-        page.get_by_role("button",name="Start survey").first.wait_for()
-        buttons = page.get_by_role("button",name="Start survey").all()
-        #iterate later
-        buttons[2].click()
-        ok=re.compile("Ok, let.s go",re.IGNORECASE)
-        page.get_by_role("button",name=ok).wait_for()
-        page.get_by_role("button",name=ok).click()
+        # Wait for it to be attached to the page first
+        page.wait_for_selector(email_selector, state="attached")
+
+        # Fill it
+        page.locator(email_selector).fill("Jimmyjimmyjonjon1@gmail.com")
+        page.locator('button[data-test-id="app-page-continue-button"]').click()
+        page.locator('input[data-test-id="undefined-input"]').fill("Jimmyjonpass1!")
+        page.get_by_text("Continue").click()
+        page.locator('label[data-test-id="ps-offers-platforms-popup-desktop-label-desktop"]').click()
+        page.get_by_text("Save Selection").click()
+        page.locator(".list-item").first.wait_for()
+        for i in page.locator(".five-survey-tile").all():
+            print(i.inner_text())
+        
 
 
 
