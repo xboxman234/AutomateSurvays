@@ -40,13 +40,17 @@ def run_sync_automation():
         page.locator(".featured-surveys").locator(".five-survey-tile").first.click()
         #input()
         time.sleep(3)
-        page.locator('[data-test-id="ps-slide-unlock-handler-btn"]').wait_for(state="attached")
+        """page.locator('[data-test-id="ps-slide-unlock-handler-btn"]').wait_for(state="attached")
         box=page.locator("#slideunlock").bounding_box()
         page.locator('[data-test-id="ps-slide-unlock-handler-btn"]').drag_to(page.locator("#slideunlock"),target_position={
             "x":box['width'] - 5,
             "y": box['height']/2
-        })
+        })"""
         
+        html = page.content()
+
+        with open("page_dump.txt", "w", encoding="utf-8") as f:
+            f.write(html)
 
         #WORK ON QUALIFICATION
 
